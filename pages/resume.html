@@ -1,0 +1,50 @@
+---
+title: Resume
+permalink: /resume/
+layout: default
+---
+
+
+<h1>Resume</h1>
+<p>PDF version is available <a href="#">here</a>.</p>
+
+<div class="flex-container">
+  <div>
+  <h6>Email</h6> k.zhiyuan.xu &#9733; gmail
+  <h6>GitHub</h6> zhixu.github.io
+  <h6>LinkedIn</h6>
+</div>
+
+ <div class="row">
+   
+   <div class="col s3">
+     <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+     <h6>University of California, Berkeley</h6>
+     <p>Bachelor of Arts, Computer Science
+       Class of 2015</p>
+     
+     <h3><i class="fas fa-code"></i> Skills</h3>
+     <h6>Programming/Languages</h6>
+     <h6>Frameworks/Libraries</h6>
+     <h6>OS</h6>
+     <h6>Version Control</h6>
+     <h6>Software</h6>
+   </div>
+   
+   <div class="col s9">
+     <h3><i class="fas fa-briefcase"></i>Work Experience</h3>
+     
+     {% for exp in site.data.work %}
+       <div>
+         <h6>{{ exp.role }}</h6>
+         <p>{{ exp.company }}</p>
+         <p>{{ exp.description }}</p>
+       </div>
+     {% endfor %}
+     
+   </div>
+</div>
+  
+</div>
+
+          

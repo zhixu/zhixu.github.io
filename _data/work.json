@@ -1,0 +1,36 @@
+[{ 
+
+  role: "Software Developer",
+  dates: "",
+  company: "StrongAuth",
+  description: "Assisted with UI/UX prototyping, database design/implementation, and back-end development for security web applications. Led application development using Angular 2 and Typescript. Wrote back-end J2EE EJB code and REST/SOAP APIs. Maintained Java Servlets and JSP application code to match updated third-party API specs."
+
+},{
+
+  role: "Web Developer",
+  dates: "",
+  company: "All Natural Medicine Clinic",
+  description: "Redesigned company website to be responsive and user friendly. Created custom WordPress theme using JavaScript, jQuery and Twitter Bootstrap. Maintained website and updated it according to client’s needs."
+  
+},{
+  
+  role: "Technical Evangelist",
+  dates: "",
+  company: "Live2D",
+  description: "Independently organized product showcases and taught company’s software suite at conferences. Explained functionality and usage of company’s SDK to potential developers using examples in Java. Created promotional graphics for events."
+  
+},{
+  
+  role: "Programmer/Design Intern",
+  dates: "",
+  company: "Live2D",
+  description: "Used company’s SDK to create sample applications for Android with Java and the Android SDK. Also created a sample game application for Windows using C# and Unity 3D. Created models with company-developed software suite. Created tutori-als and promoted company’s software stack through events and media."
+  
+},{
+  
+  role: "Research Assistant",
+  dates: "",
+  company: "UC Berkeley",
+  description: "Used HTML, CSS, JavaScript and Google Maps API to create a web application that accepted user inputs of stress and visualized stress causes, storing them in a MySQL database."
+  
+}]

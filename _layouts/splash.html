@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body class="splash__container">
+    <main class="splash__main" aria-label="Content">
+        
+        <div class="splash__content">
+            <div class="svg-animate">
+                {% include_relative /assets/images/test.svg %}  
+            </div>
+            
+            <h1 class="splash__header">Katherine Xu codes, draws and drinks coffee.</h1>
+        </div>
+
+        {% assign default_paths = site.pages | map: "path" %}
+        {% assign page_paths = site.header_pages | default: default_paths %}
+        {% if page_paths %}
+        <nav class="splash__nav">
+            <ul class="splash__list">
+                {% for path in page_paths %}
+                {% assign page = site.pages | where: "path", path | first %}
+                    {% if page.title != null %}
+                    <li class="splash__item">
+                        <a class="splash__link" href="{{page.url | relative_url }}">{{ page.title | escape }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </main>
+    <script src="../assets/js/svg-animate.js"></script>
+    </body>
+
+</html>
