@@ -194,9 +194,9 @@ h6 { font-size: 2rem;
 /* ---------------------------------- */
 .about {
     display: flex;
-    margin: 2rem 0rem;
-    
-    > p {
+    margin: 4rem 0rem;
+
+    &__description > p {
         margin-bottom: 1rem;
     }
 
