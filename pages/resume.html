@@ -4,16 +4,11 @@ permalink: /resume/
 layout: default
 ---
 
-<div class="section-title">
-    <h1>Resume</h1>
-    <p>PDF version is available <a href="#">here</a> for download.</p>
-</div>
-
 <div class="resume__container">
     
     <div>
         <div class="resume__title">
-            <div class="fa-4x">
+            <div class="resume__icon fa-4x">
                 <i class="fas fa-graduation-cap" 
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
@@ -24,11 +19,11 @@ layout: default
         <div class="resume__section">
             <h6>University of California, Berkeley</h6>
             <p>Bachelor of Arts, Computer Science
-            Class of 2015</p>
+            <br/>Class of 2015</p>
         </div>
 
         <div class="resume__title">
-            <div class="fa-4x">
+            <div class="resume__icon fa-4x">
                 <i class="fas fa-code"
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
@@ -38,8 +33,6 @@ layout: default
         </div>
         <div class="resume__section">
             <h6>Proficient</h6>
-            <p>Have used recently and have thorough understanding of these technologies.
-            Can complete tasks using these with minimal complications.</p>
             <ul>
                 <li>Java</li>
                 <li>Typescript</li>
@@ -48,17 +41,7 @@ layout: default
                 <li>Bootstrap</li>
             </ul>
 
-            <ul>
-                <li>Javascript</li>
-                <li>Python</li>
-                <li>C</li>
-                <li>C++</li>
-                <li>mySQL</li>
-                <li>PHP</li>
-                <li>C#</li>
-            </ul>
-
-            <h6>Decent</h6>
+            <h6>Prior Experience</h6>
             <p>Have relative familiarity and have commpleted some 
                 Can complete tasks using these technologies with some visits to StackOverflow.</p>
                 <ul>
@@ -99,27 +82,13 @@ layout: default
                 <li>JQuery</li>
                 <li>Django</li>
             </ul>
-
-            <h6>OS</h6>
-            <ul>
-                <li>Linux</li>
-                <li>Windows</li>
-            </ul>
-
-            <h6>Version Control</h6>
-            Git, SVN
-            
-            <h6>Software</h6>
-            Adobe
-Photoshop,
-Illustrator, myBalsamiq
         </div>
 
     </div>
 
     <div>
         <div class="resume__title">
-            <div class="fa-4x">
+            <div class="resume__icon fa-4x">
                 <i class="fas fa-briefcase"
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
@@ -132,30 +101,30 @@ Illustrator, myBalsamiq
             {% for exp in site.data.work %}
             <div class="work">
                 <h6 class="work__role">{{ exp.role }}</h6>
-                <p class="work__company">{{ exp.company }}</p>
-                <p class="work__dates">{{ exp.dates }}</p>
+                <div class="work__details">
+                    <p class="work__company">{{ exp.company }}</p>
+                    <p class="work__dates">{{ exp.dates }}</p>
+                </div>
                 <p class="work__description">{{ exp.description }}</p>
             </div>
             {% endfor %}
         </div>
 
         <div class="resume__title">
-            <div class="fa-4x">
+            <div class="resume__icon fa-4x">
                 <i class="fas fa-briefcase"
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
             </div>
             <div>
-                <h2>Select Projects</h2>
+                <h2>Projects</h2>
             </div>
         </div>
         <div class="resume__section">
             {% for exp in site.data.work %}
-            <div class="work">
-                <h6 class="work__role">{{ exp.role }}</h6>
-                <p class="work__company">{{ exp.company }}</p>
-                <p class="work__date">January 1 to January 1</p>
-                <p class="work__description">{{ exp.description }}</p>
+            <div class="project">
+                <h6 class="project__tech">{{ exp.role }}</h6>
+                <p class="project__description">{{ exp.description }}</p>
             </div>
             {% endfor %}
         </div>

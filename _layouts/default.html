@@ -9,6 +9,12 @@
 
     <main class="container" aria-label="Content">
         <div class="content">
+            {% if page.title %}
+            <div class="section-title">
+                <h1>{{page.title}}</h1>
+                <p>PDF version is available <a href="#">here</a> for download.</p>
+            </div>
+            {% endif %}
             {{ content }}
         </div>
     </main>
