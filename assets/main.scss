@@ -17,7 +17,7 @@ $second-font: 'Lato', sans-serif;
 $color-gray-dark: #555;
 $color-gray-light: #f5f5f5;
 $color-highlight: #44b9ea;
-// $color-gray-1:
+
 
 /* ---------------------------------- */
 // CSS RESET
@@ -42,6 +42,11 @@ body {
     font-family: $second-font;
     color: $color-gray-dark;
     background-color: $color-gray-light;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 a:link,
@@ -71,18 +76,32 @@ h6 { font-size: 2rem;
     line-height:2.5rem; }
 
 .container {
-    margin-top: 3rem;
+    min-height: 100%;
     display: grid;
-    grid-template-columns: unquote("1fr [content-start] minmax(40rem, 120rem) [content-end] 1fr");
+    grid-template-columns: unquote("1fr [content-col-start] minmax(40rem, 120rem) [content-col-end content-end] 1fr");
+    grid-template-rows: unquote("[navbar-start] auto [navbar-end content-row-begin] 1fr [content-row-end footer-start] auto [footer-end]");
+}
+
+.header {
+    grid-column: 1 / 4;
 }
 
 .content {
-    grid-column: content-start / content-end;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background-color: #fff;
+    padding: 3rem;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
+.page {
+    &__title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
 }
 
 .icon {
@@ -99,7 +118,6 @@ h6 { font-size: 2rem;
 // SPLASH
 /* ---------------------------------- */
 .splash {
-
     &__container {
         width: 100vw;
         height: 100vh;
@@ -123,20 +141,19 @@ h6 { font-size: 2rem;
 /* ---------------------------------- */
 .header {
 
-    grid-column: content-start / content-end;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: stretch;
+    display: grid;
+    background-color: $color-gray-dark;
+    grid-template-columns: 1fr minmax(40rem, 120rem) 1fr;
 
     &__container {
-        background-color: $color-gray-dark;
+        grid-column: 2 / 3;
         display: grid;
-        grid-template-columns: unquote("1fr [content-start] 120rem [content-end] 1fr");
+        grid-template-columns: 1fr 1fr;
     }
 
     &__title {
         display: inline-block;
+        align-self: start;
     }
 
     &__home-link:link,
@@ -144,11 +161,6 @@ h6 { font-size: 2rem;
         color: #fff;
         transition: all .5s ease;
     }
-
-    // &__home-link:hover {
-    //     color: red;
-    //     transform: rotate(360deg);
-    // }
 }
 
 /* ---------------------------------- */
@@ -156,6 +168,7 @@ h6 { font-size: 2rem;
 /* ---------------------------------- */
 .nav {
     background-color: $color-gray-dark;
+    align-self: right;
 
     &__list { // ul
         display: flex;
@@ -174,7 +187,6 @@ h6 { font-size: 2rem;
 
     &__link:link,
     &__link:visited {
-        // height: 100%;
         padding: 1.5rem;
         text-decoration: none;
         text-transform: uppercase;
@@ -203,8 +215,6 @@ h6 { font-size: 2rem;
     &__image {
         margin-right: 6rem;
     }
-    
-    
 }
 
 /* ---------------------------------- */
@@ -249,10 +259,17 @@ h6 { font-size: 2rem;
             background-color: $color-gray-dark;
         }
     }
+}
 
-    
-    &__header {
+.skill {
+    &__title {
 
+    }
+
+    &__list {
+        list-style: none;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -277,6 +294,8 @@ h6 { font-size: 2rem;
 // FOOTER
 /* ---------------------------------- */
 .footer {
+    grid-row: 3 / 3;
+    grid-column: 1 / 4;
 
     padding: 3rem;
     background-color: $color-gray-dark;

@@ -1,21 +1,22 @@
-<header class="header__container" role="banner">
-  <div class="header">
-      <h2 class="header__title"><a class="header__home-link" href="/" alt="Home">✿</a></h2>
-      <nav class="nav">
-          {% assign default_paths = site.pages | map: "path" %}
-          {% assign page_paths = site.header_pages | default: default_paths %}
-          {% if page_paths %}
-              <ul class="nav__list">
-                  {% for path in page_paths %}
-                      {% assign page = site.pages | where: "path", path | first %}
-                      {% if page.title != null %}
-                          <li class="nav__item">
-                              <a class="nav__link" href="{{page.url | relative_url }}">{{ page.title | escape }}</a>
-                          </li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
+<header class="header" role="banner">
+    <div class="header__container">
+        <h2 class="header__title"><a class="header__home-link" href="/" alt="Home">✿</a></h2>
+        <nav class="nav">
+            {% assign default_paths = site.pages | map: "path" %}
+            {% assign page_paths = site.header_pages | default: default_paths %}
+            {% if page_paths %}
+                <ul class="nav__list">
+                    {% for path in page_paths %}
+                        {% assign page = site.pages | where: "path", path | first %}
+                        {% if page.title != null %}
+                            <li class="nav__item">
+                                <a class="nav__link" href="{{page.url | relative_url }}">{{ page.title | escape }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
         {% endif %}
-      </nav>
-  </div>
+        </nav>
+    </div>
+    
 </header>
