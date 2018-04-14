@@ -3,3 +3,23 @@ title: Blog
 permalink: /blog/
 layout: page
 ---
+
+<p class="blog__description"p>This blog serves more more as my personal documentation of coding problems I've encountered.
+    By writing about these issues, I hope to understand the problem on a deeper level and better retain the knowledge.
+    <br/>
+    If you've stumbled across one of these posts and they've been helpful to you, then that's great as well!
+</p>
+
+{% if site.posts.size > 0 %}
+<ul class="blog__list">
+    {% for post in site.posts %}
+    <li class="blog__item">
+        <a class="blog__post-link" href="{{ post.url | relative_url }}">
+            <h3>{{ post.title | escape }}</h3>
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            <p class="blog__post-meta">{{ post.date | date: date_format }}</p>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

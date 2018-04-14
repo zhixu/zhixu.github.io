@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Creating Animated SVGs"
 date:   2018-02-08 16:06:21 -0800
-categories: jekyll update
+categories: svg programming
 ---
 
 I stumbled across this type of animation while browsing through the anime.js library. I wanted to include it on my own personal website, but didn't want to load a whole entire library just for that one effect. I Googled a little further and stumbled across this post: https://jakearchibald.com/2013/animated-line-drawing-svg/ which is what I have been following. 

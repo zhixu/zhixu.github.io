@@ -97,6 +97,7 @@ h6 { font-size: 2rem;
     &__title {
         text-align: center;
         margin-bottom: 3rem;
+        position: relative;
     }
 
     &__subtitle {
@@ -214,6 +215,42 @@ h6 { font-size: 2rem;
 
     &__image {
         margin-right: 6rem;
+    }
+}
+
+/* ---------------------------------- */
+// ABOUT
+/* ---------------------------------- */
+.blog {
+    // &__description {
+    //     text-align: center;
+    // }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        // border-left: 2px dotted $color-highlight;
+        // padding-left: 4.2rem;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    &__post-link:link,
+    &__post-link:visited {
+        display: inline-block;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    &__post-link:hover {
+        color: #fff;
+        background-color:$color-highlight;
+        transform: translateX(0.5rem);
     }
 }
 
