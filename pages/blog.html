@@ -23,3 +23,21 @@ layout: page
     {% endfor %}
 </ul>
 {% endif %}
+
+{% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+        <div class="resume__title">
+                <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x calendar-text">{{post.date | date: date_format }}</strong>
+                </span>
+            <div class="resume__icon fa-4x">
+                <i class="fas fa-book" 
+                    data-fa-transform="shrink-8" 
+                    data-fa-mask="fas fa-circle"></i>
+            </div>
+            
+            <a href="{{ post.url | relative_url }}"><h2>{{ post.title | escape }}</h2></a>
+        </div>
+    {% endfor %}
+{% endif %}

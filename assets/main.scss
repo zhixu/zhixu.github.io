@@ -4,8 +4,6 @@
 
 @charset "utf-8";
 
-//@import "minima";
-
 @import "animations";
 
 // google fonts
@@ -62,6 +60,18 @@ a:hover {
     color: darken($color-highlight, 15%);
 }
 
+.link {
+    &--icon:link,
+    &--icon:visited {
+        color: #fff;
+        transition: all .5 ease;
+    }
+
+    &--icon:hover {
+        color: $color-highlight;
+    }
+}
+
 /* ---------------------------------- */
 // GENERAL STUFF
 /* ---------------------------------- */
@@ -82,7 +92,6 @@ h6 { font-size: 2rem;
     display: grid;
     grid-template-columns: unquote("1fr [content-col-start] minmax(40rem, 120rem) [content-col-end content-end] 1fr");
     grid-template-rows: unquote("[navbar-start] auto [navbar-end content-row-begin] 1fr [content-row-end footer-start] auto [footer-end]");
-    // overflow: hidden;
 }
 
 .header {
@@ -92,6 +101,7 @@ h6 { font-size: 2rem;
 .content {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
+    background-color: #fff;
     padding: 3rem;
 
     &--slideInUp {
@@ -133,6 +143,7 @@ h6 { font-size: 2rem;
         justify-items: center;
         text-align: center;
         background-color: $color-gray-light;
+
         overflow: hidden;
         animation: fadeInUp 1s ease-out;
     }
@@ -151,9 +162,9 @@ h6 { font-size: 2rem;
         justify-self: center;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        > .nav {
-            grid-column: 2 / 3;
-        }
+            > .nav {
+                grid-column: 2 / 3;
+            }
     }
 }
 
@@ -175,12 +186,6 @@ h6 { font-size: 2rem;
     &__title {
         padding-left: 3rem;
         align-self: start;
-    }
-
-    &__home-link:link,
-    &__home-link:visited {
-        color: #fff;
-        transition: all .5s ease;
     }
 }
 
@@ -271,6 +276,10 @@ h6 { font-size: 2rem;
         color: #fff;
         background-color:$color-highlight;
         transform: translateX(0.5rem);
+    }
+
+    &__post-meta {
+        
     }
 }
 
@@ -369,9 +378,9 @@ h6 { font-size: 2rem;
         padding: 1rem;
     }
 
-    &__link:link,
-    &__link:visited {
-        color: #fff;
-        transition: all .5s ease;
-    }
+    // &__link:link,
+    // &__link:visited {
+    //     color: #fff;
+    //     transition: all .5s ease;
+    // }
 }

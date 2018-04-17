@@ -7,4 +7,4 @@ categories: projects
 
 Technologies Used: C++, OpenGL
 
-Solved inverse kinematics joints using quaternions.
+Solved inverse kinematics joints using quaternions. 

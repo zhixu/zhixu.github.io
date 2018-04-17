@@ -1,6 +1,6 @@
 <header class="header" role="banner">
     <div class="header__container">
-        <h2 class="header__title"><a class="header__home-link" href="/" alt="Home">✿</a></h2>
+        <h2 class="header__title"><a class="link--icon" href="/" alt="Home"><i class="far fa-circle"></i>        </a></h2>
         <nav class="nav">
             {% assign default_paths = site.pages | map: "path" %}
             {% assign page_paths = site.header_pages | default: default_paths %}
