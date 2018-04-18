@@ -1,0 +1,9 @@
+[{
+    "name": "Sales Analytics Web Application for Artists",
+    "tools": "HTML, CSS, Javascript, Twitter Bootstrap, Django",
+    "description": "Personal project. Implemented responsive front end with multiple browser support. Assisted with debugging back end. Wrote web scraper using Python and Beautiful Soup to add information to database."
+},{
+    "name": "Optimized Ray Tracer",
+    "tools": "C++, OpenGL, OpenMP, SSE Intrinsics",
+    "description": "Designed and implemented a ray tracer optimized to scale 2800 times faster than the serial version with the implementation of AABB trees and usage of parallel programming languages."
+}]

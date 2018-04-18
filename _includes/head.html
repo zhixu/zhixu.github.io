@@ -10,5 +10,5 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
-  <title>Katherine Xu</title>
+  <title>Katherine Xu {% if page.title %} | {{ page.title }}{% endif %}</title>
 </head>

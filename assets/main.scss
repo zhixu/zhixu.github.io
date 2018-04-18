@@ -7,7 +7,6 @@
 @import "animations";
 
 // google fonts
-// @import url(https://fonts.googleapis.com/css?family=Lato|Montserrat:700);
 @import url(https://fonts.googleapis.com/css?family=Lato|Titillium+Web:700,900);
 /* ---------------------------------- */
 // VARIABLES
@@ -87,6 +86,10 @@ h5 { font-size: 2rem; }
 h6 { font-size: 2rem;
     line-height:2.5rem; }
 
+p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
 .container {
     min-height: 100%;
     display: grid;
@@ -101,12 +104,7 @@ h6 { font-size: 2rem;
 .content {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    background-color: #fff;
     padding: 3rem;
-
-    &--slideInUp {
-        animation: slideInUp .5s ease-out;
-    }
 }
 
 .page {
@@ -166,6 +164,10 @@ h6 { font-size: 2rem;
                 grid-column: 2 / 3;
             }
     }
+}
+
+.animate--slideOutUp {
+    animation: slideOutUp 1s ease-out;
 }
 
 /* ---------------------------------- */
@@ -244,25 +246,22 @@ h6 { font-size: 2rem;
 }
 
 /* ---------------------------------- */
-// ABOUT
+// BLOG
 /* ---------------------------------- */
 .blog {
-    // &__description {
-    //     text-align: center;
-    // }
+    &__description {
+        margin-bottom: 3rem;
+    }
 
     &__list {
         list-style: none;
     }
 
-    &__item {
+    &__item:not(:last-child) {
         // border-left: 2px dotted $color-highlight;
         // padding-left: 4.2rem;
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-
+        // padding: 2rem;
+        border-bottom: 1px dotted $color-gray-dark;
     }
 
     &__post-link:link,
@@ -279,8 +278,37 @@ h6 { font-size: 2rem;
     }
 
     &__post-meta {
-        
+        text-transform: uppercase;
+        color: $color-gray-dark;
     }
+}
+
+/* ---------------------------------- */
+// POST
+/* ---------------------------------- */
+.post {
+    &__header {
+        margin-bottom: 4rem;
+    }
+}
+
+code {
+    background: white;
+    padding: 2px;
+}
+
+.highlight {
+    background: white;
+    padding: 1rem;
+}
+
+/* ---------------------------------- */
+// PROJECTS
+/* ---------------------------------- */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
 }
 
 /* ---------------------------------- */
@@ -328,13 +356,8 @@ h6 { font-size: 2rem;
 }
 
 .skill {
-    &__title {
-
-    }
-
     &__list {
         list-style: none;
-        padding-left: 2rem;
         margin-bottom: 1rem;
     }
 }
@@ -352,8 +375,19 @@ h6 { font-size: 2rem;
     &__description {
         text-align: justify;
     }
+
+    &__tools {
+        font-style: italic;
+    }
 }
 
+.project {
+
+}
+
+.text--center {
+    text-align: center;
+}
 
 
 /* ---------------------------------- */
