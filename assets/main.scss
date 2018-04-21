@@ -105,6 +105,10 @@ p:not(:last-child) {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     padding: 3rem;
+
+    @media only screen and (max-width: 40em) { 
+        grid-column: 1 / 4;
+    };
 }
 
 .page {
@@ -127,6 +131,11 @@ p:not(:last-child) {
     &--circle {
         border-radius: 50%;
     }
+
+    &--center {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* ---------------------------------- */
@@ -144,6 +153,10 @@ p:not(:last-child) {
 
         overflow: hidden;
         animation: fadeInUp 1s ease-out;
+    }
+
+    &__svg svg {
+        width: 100%;
     }
 
     &__main {
@@ -236,12 +249,24 @@ p:not(:last-child) {
     display: flex;
     margin: 4rem 0rem;
 
+    @media only screen and (max-width: 40em) {
+        display: block;
+    }
+
     &__description > p {
         margin-bottom: 1rem;
     }
 
     &__image {
-        margin-right: 6rem;
+        padding: 0 2rem;
+        // display: block;
+        // margin-left: 0 auto;
+        // // margin-right: 6rem;
+        // margin: 0 auto;
+
+        // @media only screen and (max-width: 70em) {
+        //     display: block;
+        // }
     }
 }
 
@@ -319,6 +344,10 @@ code {
         display: grid;
         grid-template-columns: 1fr 3fr;
         grid-column-gap: 3rem;
+
+        @media only screen and (max-width: 40rem) {
+            display: block;
+        }
     }
 
     &__section {
