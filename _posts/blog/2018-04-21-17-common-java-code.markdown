@@ -15,3 +15,16 @@ Map<String, Integer> result = hm.entrySet().stream()
     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
             (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 ```
+
+
+### Iterating Through HashMap
+
+```java
+Iterator it = (Iterator) hm.entrySet().iterator();
+
+while(it.hasNext()) {
+    Map.Entry entry = (Map.Entry) it.next();
+    entry.getValue();
+    entry.getKey();
+}
+```
