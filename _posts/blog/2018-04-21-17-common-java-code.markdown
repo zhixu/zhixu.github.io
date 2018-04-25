@@ -28,3 +28,18 @@ while(it.hasNext()) {
     entry.getKey();
 }
 ```
+
+Easier way:
+```java
+for (String key: hm.keySet()) {
+    key;
+    hm.get(key);
+}
+```
+
+### Using STDIN (HackerRank interviews)
+```java
+Scanner scan = new Scanner(System.in);
+int n = scan.nextInt();   // read the next integer input
+String input = scan.next(); // read the next string input
+```
