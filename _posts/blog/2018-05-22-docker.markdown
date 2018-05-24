@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Common Docker Commands"
-date:   2018-05-23 19:34:41 -0800
+date:   2018-05-22 19:34:41 -0800
 categories: docker
 ---
 
@@ -46,7 +46,7 @@ docker stack deploy -c docker-compose.yml my-app
 ```
 
 Sample YML for composing stack
-```YAML
+```yaml
 version: '3.5'
 
 services:
