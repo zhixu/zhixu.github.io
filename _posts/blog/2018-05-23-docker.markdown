@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "Common Docker Commands"
+date:   2018-05-23 19:34:41 -0800
+categories: docker
+---
+
+### Build an Image
+Make sure that Dockerfile is present in the folder you're running this command in.
+```console
+docker build -t <name> .
+```
+
+### List Images
+```bash
+docker image ls
+```
+
+### Running Image
+In this example, port 4000 is exposed to the end user and it's mapped to port 80. Name is not necessary because if not specified, then it's auto-generated.
+```console	
+docker run -name <name> -p 4000:80 <image name>
+```
+
+### List Containers
+```console
+docker ps
+```
+
+### Kill Containers
+```console
+docker kill <container id>
+```
+
+Helpful way to stop all containers, remove all containers and remove all images
+```console
+docker kill $(docker ps -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q)
+```
+
+### Docker Swarm
+
+Initialize swarm and deploy stack
+```console
+docker swarm init --advertise-addr <address>
+docker stack deploy -c docker-compose.yml my-app
+```
+
+Sample YML for composing stack
+```YAML
+version: '3.5'
+
+services:
+
+  db:
+    image: zhixu/mysql-db:latest
+    restart: always
+    container_name: mysql_db
+  web:
+    image: zhixu/glassfish-app:latest
+    container_name: glassfish_app
+    depends_on:
+      - "db"
+    ports:
+      - "8080:8080"
+```
+
+A note regarding Glassfish JDBC connection with database and Glassfish server in different containers--the service name determines the JDBC connection URL. For example, in line with the example above--the JDBC URL becomes `jdbc:mysql://db:3306/<database name>` The port is 3306 by default.
+
+You can remove the stack and leave the swarm with the following commands.
+```console
+docker stack rm my-app
+docker swarm leave --force
+```
+
+### Viewing Logs
+```console
+docker logs --follow <container ID>
+```
+
+### Running Bash in Container
+```console
+docker exec -it <container ID> bash -l
+```
