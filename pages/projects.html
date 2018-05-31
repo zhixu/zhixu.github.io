@@ -4,14 +4,15 @@ permalink: /projects/
 layout: page
 ---
 
-<p>Currently under construction.</p>
-
-
-<!-- <div class="projects">
+<div class="projects">
+    {% for proj in site.data.projects_detailed %}
     <div class="project">
-        <img src="/assets/images/300X300.png">
-        <div class="project__overlay">
-            <div class="project__title">Project Title</div>
-        </div>
+        <h6>{{proj.name}}</h6>
+        <p class="project__tools">{{proj.tools}}</p>
+        <p class="project__description">{{proj.description}}</p>
+        {% if proj.example %}<p><a href={{proj.example}}>View Running Example</a></p>{% endif %}
+        {% if proj.repo %}<a href={{proj.repo}}>View Repo on GitHub</a>{% endif %}
     </div>
-</div> -->
+    {% endfor %}
+</div>
+

@@ -333,7 +333,24 @@ code {
 .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2rem;
+
+    @media only screen and (max-width: 50em) {
+        display: block;
+    }
+}
+
+.project {
+    margin-bottom: 2rem;
+
+    &__tools {
+        font-style: italic;
+    }
+
+    &__description {
+        text-align: justify;
+    }
+
 }
 
 /* ---------------------------------- */
@@ -410,9 +427,7 @@ code {
     }
 }
 
-.project {
 
-}
 
 .text--center {
     text-align: center;
