@@ -4,12 +4,9 @@
 
 @charset "utf-8";
 
-//@import "minima";
-
 @import "animations";
 
 // google fonts
-// @import url(https://fonts.googleapis.com/css?family=Lato|Montserrat:700);
 @import url(https://fonts.googleapis.com/css?family=Lato|Titillium+Web:700,900);
 /* ---------------------------------- */
 // VARIABLES
@@ -62,6 +59,18 @@ a:hover {
     color: darken($color-highlight, 15%);
 }
 
+.link {
+    &--icon:link,
+    &--icon:visited {
+        color: #fff;
+        transition: all .5 ease;
+    }
+
+    &--icon:hover {
+        color: $color-highlight;
+    }
+}
+
 /* ---------------------------------- */
 // GENERAL STUFF
 /* ---------------------------------- */
@@ -77,12 +86,15 @@ h5 { font-size: 2rem; }
 h6 { font-size: 2rem;
     line-height:2.5rem; }
 
+p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
 .container {
     min-height: 100%;
     display: grid;
     grid-template-columns: unquote("1fr [content-col-start] minmax(40rem, 120rem) [content-col-end content-end] 1fr");
     grid-template-rows: unquote("[navbar-start] auto [navbar-end content-row-begin] 1fr [content-row-end footer-start] auto [footer-end]");
-    // overflow: hidden;
 }
 
 .header {
@@ -94,9 +106,9 @@ h6 { font-size: 2rem;
     grid-column: 2 / 3;
     padding: 3rem;
 
-    &--slideInUp {
-        animation: slideInUp .5s ease-out;
-    }
+    @media only screen and (max-width: 40em) { 
+        grid-column: 1 / 4;
+    };
 }
 
 .page {
@@ -119,6 +131,11 @@ h6 { font-size: 2rem;
     &--circle {
         border-radius: 50%;
     }
+
+    &--center {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* ---------------------------------- */
@@ -133,8 +150,13 @@ h6 { font-size: 2rem;
         justify-items: center;
         text-align: center;
         background-color: $color-gray-light;
+
         overflow: hidden;
         animation: fadeInUp 1s ease-out;
+    }
+
+    &__svg svg {
+        width: 100%;
     }
 
     &__main {
@@ -151,10 +173,14 @@ h6 { font-size: 2rem;
         justify-self: center;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        > .nav {
-            grid-column: 2 / 3;
-        }
+            > .nav {
+                grid-column: 2 / 3;
+            }
     }
+}
+
+.animate--slideOutUp {
+    animation: slideOutUp 1s ease-out;
 }
 
 /* ---------------------------------- */
@@ -175,12 +201,6 @@ h6 { font-size: 2rem;
     &__title {
         padding-left: 3rem;
         align-self: start;
-    }
-
-    &__home-link:link,
-    &__home-link:visited {
-        color: #fff;
-        transition: all .5s ease;
     }
 }
 
@@ -229,35 +249,44 @@ h6 { font-size: 2rem;
     display: flex;
     margin: 4rem 0rem;
 
+    @media only screen and (max-width: 40em) {
+        display: block;
+    }
+
     &__description > p {
         margin-bottom: 1rem;
     }
 
     &__image {
-        margin-right: 6rem;
+        padding: 0 2rem;
+        // display: block;
+        // margin-left: 0 auto;
+        // // margin-right: 6rem;
+        // margin: 0 auto;
+
+        // @media only screen and (max-width: 70em) {
+        //     display: block;
+        // }
     }
 }
 
 /* ---------------------------------- */
-// ABOUT
+// BLOG
 /* ---------------------------------- */
 .blog {
-    // &__description {
-    //     text-align: center;
-    // }
+    &__description {
+        margin-bottom: 3rem;
+    }
 
     &__list {
         list-style: none;
     }
 
-    &__item {
+    &__item:not(:last-child) {
         // border-left: 2px dotted $color-highlight;
         // padding-left: 4.2rem;
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-
+        // padding: 2rem;
+        border-bottom: 1px dotted $color-gray-dark;
     }
 
     &__post-link:link,
@@ -272,6 +301,56 @@ h6 { font-size: 2rem;
         background-color:$color-highlight;
         transform: translateX(0.5rem);
     }
+
+    &__post-meta {
+        text-transform: uppercase;
+        color: $color-gray-dark;
+    }
+}
+
+/* ---------------------------------- */
+// POST
+/* ---------------------------------- */
+.post {
+    &__header {
+        margin-bottom: 4rem;
+    }
+}
+
+code {
+    background: white;
+    padding: 2px;
+}
+
+.highlight {
+    background: white;
+    padding: 1rem;
+}
+
+/* ---------------------------------- */
+// PROJECTS
+/* ---------------------------------- */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    @media only screen and (max-width: 50em) {
+        display: block;
+    }
+}
+
+.project {
+    margin-bottom: 2rem;
+
+    &__tools {
+        font-style: italic;
+    }
+
+    &__description {
+        text-align: justify;
+    }
+
 }
 
 /* ---------------------------------- */
@@ -282,6 +361,10 @@ h6 { font-size: 2rem;
         display: grid;
         grid-template-columns: 1fr 3fr;
         grid-column-gap: 3rem;
+
+        @media only screen and (max-width: 40rem) {
+            display: block;
+        }
     }
 
     &__section {
@@ -319,13 +402,8 @@ h6 { font-size: 2rem;
 }
 
 .skill {
-    &__title {
-
-    }
-
     &__list {
         list-style: none;
-        padding-left: 2rem;
         margin-bottom: 1rem;
     }
 }
@@ -343,8 +421,17 @@ h6 { font-size: 2rem;
     &__description {
         text-align: justify;
     }
+
+    &__tools {
+        font-style: italic;
+    }
 }
 
+
+
+.text--center {
+    text-align: center;
+}
 
 
 /* ---------------------------------- */
@@ -369,9 +456,9 @@ h6 { font-size: 2rem;
         padding: 1rem;
     }
 
-    &__link:link,
-    &__link:visited {
-        color: #fff;
-        transition: all .5s ease;
-    }
+    // &__link:link,
+    // &__link:visited {
+    //     color: #fff;
+    //     transition: all .5s ease;
+    // }
 }

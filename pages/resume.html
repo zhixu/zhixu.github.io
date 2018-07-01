@@ -23,6 +23,29 @@ layout: page
 
         <div class="resume__title">
             <div class="resume__icon fa-4x">
+                <i class="fas fa-book" 
+                    data-fa-transform="shrink-8" 
+                    data-fa-mask="fas fa-circle"></i>
+            </div>
+            
+            <h2>Relevant Courses</h2>
+        </div>
+        <div class="resume__section">
+            <ul class="skill__list">
+                <li>Data Structures</li>
+                <li>Machine Structures</li>
+                <li>Discrete Math</li>
+                <li>Linear Algebra</li>
+                <li>Computer Graphics</li>
+                <li>Parallel Software Engineering</li>
+                <li>Artificial Intelligence</li>
+                <li>UI Design / Android Development</li>
+                <li>Networking</li>
+            </ul>
+        </div>
+
+        <div class="resume__title">
+            <div class="resume__icon fa-4x">
                 <i class="fas fa-code"
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
@@ -35,8 +58,7 @@ layout: page
             <ul class="skill__list">
                 <li>Java</li>
                 <li>Typescript</li>
-                <li>Javascript</li>
-                <li>SASS</li>
+                <li>SCSS</li>
                 <li>Bootstrap</li>
             </ul>
 
@@ -49,6 +71,7 @@ layout: page
                 <li>Webpack</li>
                 <li>NPM</li>
 
+                <li>Javascript</li>
                 <li>jQuery</li>
 
                 <li>C</li>
@@ -101,20 +124,19 @@ layout: page
                     data-fa-mask="fas fa-circle"></i>
             </div>
             <div>
-                <h2>Projects</h2>
+                <h2>Select Projects</h2>
             </div>
         </div>
         <div class="resume__section">
-            {% for exp in site.data.work %}
-            <div class="project">
-                <h6 class="project__tech">{{ exp.role }}</h6>
-                <p class="project__description">{{ exp.description }}</p>
+            {% for proj in site.data.projects %}
+            <div class="work">
+                <h6 class="work__role">{{ proj.name }}</h6>
+                <p class="work__tools">{{ proj.tools }}</p>
+                <p class="work__description">{{ proj.description }}</p>
             </div>
             {% endfor %}
         </div>
-        
     </div>
-
 </div>
 
           

@@ -1,0 +1,25 @@
+[{
+    "name": "Path to Philosophy",
+    "tools": "Java, HTML, CSS, Javascript, Payara, MySQL, Docker",
+    "description": "Coding challenge for company appplication where user inputs a starting Wikipedia URL and back end parses the page, clicks the first non-parenthesized link and returns a list of pages to reach the philosophy page. The subsequent path is then stored in a MySQL database.",
+    "repo": "https://github.com/zhixu/pathtophilosophy",
+    "example": "http://ec2-18-219-189-222.us-east-2.compute.amazonaws.com:8080/pathtophilosophy-web/"
+},{
+    "name": "Houston Email Data Visualization",
+    "tools": "Python, Pandas, D3.js",
+    "description": "Coding challenge for company application where a 1.4GB CSV file is parsed and analyzed for relationships between individuals, communities, and most popular members of the group",
+    "repo": "https://github.com/zhixu/houston-datavis",
+    "example": null
+},{
+    "name": "Artistally",
+    "tools": "HTML, CSS, Javascript, Twitter Bootstrap, Django",
+    "description": "Personal project. Implemented responsive front end with multiple browser support. Assisted with debugging back end. Wrote web scraper using Python and Beautiful Soup to add information to database.",
+    "repo": "https://github.com/zhixu/artistally",
+    "example": "https://artistally.net"
+},{
+    "name": "Optimized Ray Tracer",
+    "tools": "C++, OpenGL, OpenMP, SSE Intrinsics",
+    "description": "Designed and implemented a ray tracer optimized to scale 2800 times faster than the serial version with the implementation of AABB trees and usage of parallel programming languages.",
+    "repo": "https://github.com/zhixu/raytracer-SSE-AABB",
+    "example": null
+}]
