@@ -1,4 +1,10 @@
-[{ 
+[{
+
+  "role": "Software Developer",
+  "dates": "June 2018-", 
+  "company": "Phil, Inc.",
+  "description": "Implemented reusable consumer-facing user interface components in React and Javascript ES6, managed application state using Redux, implemented custom AngularJS components for internal tools, implemented backend API logic using Golang, integrated 3rd party tools (Twilio, Lob) into platform"
+}, { 
 
   "role": "Software Developer",
   "dates": "April 2016-August 2017",
