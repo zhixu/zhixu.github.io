@@ -50,44 +50,42 @@ layout: page
                     data-fa-transform="shrink-8" 
                     data-fa-mask="fas fa-circle"></i>
             </div>
-            <h2>Skills</h2>
+            <h2>Skills - Proficient</h2>
             
         </div>
         <div class="resume__section">
-            <h6 class="skill__title">Proficient</h6>
             <ul class="skill__list">
-                <li>Java</li>
-                <li>Typescript</li>
-                <li>SCSS</li>
-                <li>Bootstrap</li>
-            </ul>
-
-            <h6 class="skill__title">Prior Experience</h6>
-            <ul class="skill__list">
-                <li>Python</li>
-                <li>Django</li>
-
-                <li>Angular2</li>
-                <li>Webpack</li>
-                <li>NPM</li>
-
-                <li>Javascript</li>
-                <li>jQuery</li>
-
-                <li>C</li>
-                <li>C++</li>
-                <li>OpenGL</li>
-
-                <li>Android SDK</li>
-
-                <li>PHP</li>
-                <li>mySQL</li>
-
+                <li>Javascript (ECMAScript 5+)</li>
+                <li>ReactJS</li>
+                <li>Redux</li>
+                <li>Redux Saga</li>
+                <li>HTML, CSS, Sass</li>
                 <li>Git</li>
+            </ul>
+        </div>
+        <div class="resume__title">
+            <div class="resume__icon fa-4x">
+                <i class="fas fa-code"
+                    data-fa-transform="shrink-8" 
+                    data-fa-mask="fas fa-circle"></i>
+            </div>
+            <h2>Skills - Familiar</h2>
+        </div>
+        <div class="resume__section">
+            <ul class="skill__list">
+                <li>AngularJS</li>
+                <li>Angular 2</li>
+                <li>Typescript</li>
+                <li>Webpack</li>
+                <li>NPM/Yarn</li>
+                <li>jQuery</li>
+                <li>Go / Golang</li>
+                <li>Java / JEE Servlets</li>
                 <li>Subversion</li>
-
-                <li>Adobe Photoshop</li>
-                <li>Adobe Illustrator</li>
+                <li>Python 2</li>
+                <li>Django</li>
+                <li>C++</li>
+                <li>C</li>
             </ul>
         </div>
 
@@ -126,15 +124,6 @@ layout: page
             <div>
                 <h2>Select Projects</h2>
             </div>
-        </div>
-        <div class="resume__section">
-            {% for proj in site.data.projects %}
-            <div class="work">
-                <h6 class="work__role">{{ proj.name }}</h6>
-                <p class="work__tools">{{ proj.tools }}</p>
-                <p class="work__description">{{ proj.description }}</p>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </div>
